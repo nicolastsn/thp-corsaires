@@ -1,0 +1,30 @@
+<h1><%= @corsair.first_name %></h1>
+<h4> Age :<%= @corsair.age %> ans <br><br>
+
+Biography : <% if @corsair.bio != nil %>
+	<%= @corsair.bio %><br><br>
+<% else %>
+	<%= @corsair.first_name %> has not yet entered this field<br><br>
+<% end %>
+
+Slack nickname : <% if @corsair.slack_handle != nil %>
+	<%= @corsair.slack_handle %><br><br>
+<% else %>
+	<%= @corsair.first_name %> has not yet entered this field<br><br>
+<% end %>
+
+Github nickname : <% if @corsair.github_handle != nil %>
+	<%= @corsair.github_handle %><br><br>
+<% else %>
+	<%= @corsair.first_name %> has not yet entered this field<br><br>
+<% end %>
+
+<% if @corsair.likeness != nil %>
+<%= "#{@corsair.first_name} likes #{@corsair.likeness}" %>
+<% else %>
+<% end %> 
+
+</h4>
+
+<br>
+<%= link_to "Edit", edit_corsair_path %>

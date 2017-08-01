@@ -1,6 +1,6 @@
 class CorsairsController < ApplicationController
   def new
-  	#@corsair = Corsair.new
+  	@corsair = Corsair.new
   end
 
   def show
@@ -27,6 +27,7 @@ class CorsairsController < ApplicationController
 
   def create
   	@corsair = Corsair.new(corsair_params)
+   
   	if @corsair.save
   		flash[:success] = "New corsair #{@corsair.first_name} successfully created!"
   		redirect_to @corsair

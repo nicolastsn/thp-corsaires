@@ -1,0 +1,19 @@
+<h1>Corsairs#index</h1>
+<p>Find me in app/views/corsairs/index.html.erb</p>
+
+<table>
+<tr>
+	<th>First name</th>
+	<th>Age</th>
+	<th>Link</th>
+</tr>
+<% @corsair.each do |c| %>
+<tr>
+	<td><%= c.first_name %></td>
+	<td><%= c.age %></td>
+	<td><%= link_to "#{c.first_name}", corsair_path(c) %></td>
+</tr>
+<% end %>
+</table>
+
+<%= link_to "Create a new Corsair", new_corsair_path %>
